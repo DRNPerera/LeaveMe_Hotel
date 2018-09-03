@@ -20,6 +20,7 @@ export class MessageService {
     let headers = new Headers();
      headers.append('Content-Type','application/json');
      return this.http.post("request/sendNotification",message,{headers:headers}).pipe(map(res=>res.json()));
+     console.log("hi");
   }
   
 }
