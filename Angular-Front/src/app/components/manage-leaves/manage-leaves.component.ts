@@ -3,6 +3,7 @@ import { RequestService } from '../../services/request.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AllRequests } from '../../services/allRequest';
 import { Router, NavigationExtras } from "@angular/router";
+import { MessageService } from "../../services/message.service";
 
 
 
@@ -21,7 +22,8 @@ export class ManageLeavesComponent implements OnInit {
   constructor(
       private requestService:RequestService,
       private flashMessage:FlashMessagesService,
-      private router:Router
+      private router:Router,
+      private messageService:MessageService
   ) {}
 
   ngOnInit() {
@@ -51,6 +53,12 @@ export class ManageLeavesComponent implements OnInit {
 	            }
             })
             this.flashMessage.show("Accepted Successfuly" , { cssClass: 'alert-success', times:3000});
+            
+            this.messageService.selectedMessage={
+              _id: null,
+              telephoneNo :"+94710107019"//telephoneNo:form.value.telephone
+            }
+            this.messageService.postMessage(this.messageService.selectedMessage);
             this.router.navigate(['/manageLeaves']);
        }else {
             this.flashMessage.show("Something Went Wrong" , { cssClass: 'alert-danger', times:3000});
@@ -96,6 +104,8 @@ export class ManageLeavesComponent implements OnInit {
         };
         this.router.navigate(["/viewUser"], navigationExtras);  
   }
+
+  
 
 
 }
