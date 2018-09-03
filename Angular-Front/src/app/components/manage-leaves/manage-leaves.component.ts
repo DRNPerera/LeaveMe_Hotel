@@ -58,7 +58,10 @@ export class ManageLeavesComponent implements OnInit {
               _id: null,
               telephoneNo :"+94710107019"//telephoneNo:form.value.telephone
             }
-            this.messageService.postMessage(this.messageService.selectedMessage);
+            this.messageService.postMessage(this.messageService.selectedMessage).subscribe((res) => {
+             console.log('done');
+              
+            });
             this.router.navigate(['/manageLeaves']);
        }else {
             this.flashMessage.show("Something Went Wrong" , { cssClass: 'alert-danger', times:3000});

@@ -977,7 +977,9 @@ var ManageLeavesComponent = /** @class */ (function () {
                     _id: null,
                     telephoneNo: "+94710107019" //telephoneNo:form.value.telephone
                 };
-                _this.messageService.postMessage(_this.messageService.selectedMessage);
+                _this.messageService.postMessage(_this.messageService.selectedMessage).subscribe(function (res) {
+                    console.log('done');
+                });
                 _this.router.navigate(['/manageLeaves']);
             }
             else {
