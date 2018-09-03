@@ -2105,7 +2105,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var MessageService = /** @class */ (function () {
     function MessageService(http) {
         this.http = http;
-        this.baseURL = 'request/sendNotificationAccepted';
+        this.baseURL = 'request/sendNotification';
     }
     MessageService.prototype.postMessage = function (message) {
         console.log(message);

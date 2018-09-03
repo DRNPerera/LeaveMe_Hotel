@@ -122,7 +122,7 @@ router.get('/viewHistory/:email', function(req, res){
 	    });	
 }); 
 
-router.post("/sendNotificationAccepted", function (req, res) {
+router.post("/sendNotification", function (req, res) {
 	console.log(req.body);
 	console.log('hello');
     const accountSid = 'ACbeed9a86ca0eae9bb5c5192ed805e4f2';
