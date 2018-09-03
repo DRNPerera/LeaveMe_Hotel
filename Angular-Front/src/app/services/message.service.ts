@@ -16,11 +16,10 @@ export class MessageService {
 
   postMessage(message: Message) {
     console.log(message);
-    // return this.http.post(this.baseURL, message);
     let headers = new Headers();
      headers.append('Content-Type','application/json');
      return this.http.post("request/sendNotification",message,{headers:headers}).pipe(map(res=>res.json()));
-     console.log("hi");
+     
   }
   
 }
