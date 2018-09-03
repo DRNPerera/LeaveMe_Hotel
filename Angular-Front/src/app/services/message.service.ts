@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class MessageService {
   selectedMessage: Message;
   messages: Message[];
-  readonly baseURL = 'user/sendNotificationAccepted';
+  readonly baseURL = 'request/sendNotificationAccepted';
 
   constructor(private http: Http) { }
 
