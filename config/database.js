@@ -1,5 +1,11 @@
+// module.exports = {
+
+// 	"database":"mongodb://localhost:27017/web",
+// 	"secret":"myapplicationsecretkey"
+// };
+
 module.exports = {
 
-	"database":"mongodb://ramesh:ramad143@ds227171.mlab.com:27171/web-leaveapp",
+	"database":"mongodb://Ramesh143:ramad143@ds243502.mlab.com:43502/leaveme",
 	"secret":"myapplicationsecretkey"
 };
