@@ -120,12 +120,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_post_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/post.service */ "./src/app/services/post.service.ts");
 /* harmony import */ var _services_request_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/request.service */ "./src/app/services/request.service.ts");
 /* harmony import */ var _services_authguard_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./services/authguard.service */ "./src/app/services/authguard.service.ts");
+/* harmony import */ var _services_message_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./services/message.service */ "./src/app/services/message.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -204,7 +206,7 @@ var AppModule = /** @class */ (function () {
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(applicationRoutes),
                 angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesModule"]
             ],
-            providers: [_services_auth_service__WEBPACK_IMPORTED_MODULE_24__["AuthService"], _services_request_service__WEBPACK_IMPORTED_MODULE_26__["RequestService"], _services_post_service__WEBPACK_IMPORTED_MODULE_25__["PostService"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_27__["AuthguardService"]],
+            providers: [_services_auth_service__WEBPACK_IMPORTED_MODULE_24__["AuthService"], _services_request_service__WEBPACK_IMPORTED_MODULE_26__["RequestService"], _services_post_service__WEBPACK_IMPORTED_MODULE_25__["PostService"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesService"], _services_authguard_service__WEBPACK_IMPORTED_MODULE_27__["AuthguardService"], _services_message_service__WEBPACK_IMPORTED_MODULE_28__["MessageService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);

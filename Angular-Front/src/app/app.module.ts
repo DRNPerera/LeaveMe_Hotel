@@ -32,6 +32,7 @@ import { PostService } from './services/post.service';
 import { RequestService } from './services/request.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthguardService } from './services/authguard.service';
+import { MessageService } from './services/message.service';
 
 
 
@@ -91,7 +92,7 @@ const applicationRoutes:Routes = [
     FlashMessagesModule
     
   ],
-  providers: [AuthService, RequestService, PostService, FlashMessagesService, AuthguardService],
+  providers: [AuthService, RequestService, PostService, FlashMessagesService, AuthguardService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
