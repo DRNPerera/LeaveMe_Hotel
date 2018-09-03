@@ -17,8 +17,8 @@ export class MessageService {
   postMessage(message: Message) {
     console.log(message);
     let headers = new Headers();
-     headers.append('Content-Type','application/json');
-     return this.http.post("request/sendNotification",message,{headers:headers}).pipe(map(res=>res.json()));
+    headers.append('Content-Type','application/json');
+    return this.http.post("request/sendNotification",message,{headers:headers}).pipe(map(res=>res.json()));
      
   }
   
