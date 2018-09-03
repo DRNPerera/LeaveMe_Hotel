@@ -1,0 +1,23 @@
+<div class = "container">
+  <div class="jumbotron" style="width: 50%; background-color:#d9d9d9; border: 1px solid gray;
+    border-radius: 10px;">	
+	<h2 class = "page-header" style="background-color:#006080; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Edit News</h2>
+	<form (submit) = "updateData()">
+		<div class = "form-group">
+			<label>About</label>
+			<input type="text" [(ngModel)] = "about" name ="about" class = "form-control">
+		</div>
+		<div class = "form-group">
+			<label>Content</label><br>
+			<textarea [(ngModel)]='content' name ="content" rows="3" cols="10"></textarea>
+		</div>
+		<br>
+        <div class = "form-group">
+			<input type="submit" class ="btn btn-success" value = "Update">
+        </div>
+        <div class = "form-group">
+			<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-warning" style="border: 1px solid #4d4d4d;">
+        </div>
+	</form>
+  </div>	
+</div>

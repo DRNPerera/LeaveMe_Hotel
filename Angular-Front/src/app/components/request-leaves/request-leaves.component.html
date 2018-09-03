@@ -1,0 +1,54 @@
+<div class = "container">
+  <div class="jumbotron" style="width: 50%; background-color:#d9d9d9; border: 1px solid white;
+    border-radius: 10px; border: 1px solid gray;">	
+	<h2 class = "page-header" style="background-color:#006080; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Request Leaves</h2>
+	<form #frm="ngForm" (ngSubmit) = "request(frm)">
+		
+		<div class = "form-group">
+			<label>Date</label>
+			<input type="text" bsDaterangepicker name ="date" class = "form-control" ngModel #dateRequest="ngModel" required placeholder="Select date range">
+		</div>
+		    <div *ngIf="dateRequest?.touched && dateRequest.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
+				<div *ngIf="dateRequest.errors?.required">
+					Date is Required
+				</div>
+			</div>
+		<div class = "form-group">
+			<label>Reason</label>
+			<input type="text" name ="reason" class = "form-control" ngModel #reasonRequest="ngModel" required maxlength="25" minlength="5" placeholder="Reason">
+		</div>
+		    <div *ngIf="reasonRequest?.touched && reasonRequest.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
+				<div *ngIf="reasonRequest.errors?.required">
+					Reason is Required
+				</div>
+				<div *ngIf="reasonRequest.errors?.minlength">
+					Invalid Request
+				</div>
+			</div>
+		<div class = "form-group">
+			<label>More Text</label><br>
+			<textarea name ="describe" rows="3" cols="10" class = "form-control" ngModel #describeRequest="ngModel" maxlength="50" placeholder="More......(limit 50)">></textarea>
+		</div>
+		<button type="submit" name="button" class ="btn btn-success" [disabled]="frm.invalid">Submit</button>
+	</form>
+  </div>
+</div>
+<hr>
+<div class = "container">
+	<table>
+			<tr style="background:#006080; color:white;">
+			   <th>Requested On</th>	
+			   <th>Leave Dates</th>
+			   <th>Reason</th>
+			   <th>Delete</th>
+			</tr>
+			  
+			<tr *ngFor = "let request of requests">
+			   <td>{{request.created_at | date:"MMMM d, y 'at' h:mm:ss a"}}</td>
+			   <td>{{request.date.split(',')[0] | date}} - {{request.date.split(',')[1] | date}}</td>
+			   <td>{{request.reason}}</td>
+			   <td><input type="button" (click) = "deleteRequest(request._id)" value= "Delete" class ="btn btn-danger" style="border: 1px solid #4d4d4d;"></td>
+			</tr>
+			
+	</table>
+</div>

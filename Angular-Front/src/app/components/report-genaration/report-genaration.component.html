@@ -1,0 +1,20 @@
+<div class = "container">
+<h2 class = "page-header">Report Genaration</h2>
+<br><br>	
+	<table>
+			<tr style="background:#006080; color:white;">
+			   <th>Name</th>
+			   <th>Post</th>
+			   <th>Email</th>
+			   <th>Reports</th>
+			</tr>
+			  
+			<tr *ngFor = "let user of users">
+			   <td>{{user.full_name}}</td>
+			   <td>{{user.post}}</td>
+			   <td>{{user.email}}</td>
+			   <th><input type="button" (click) = "viewLeavesAll(user._id,user.email)" value= "Download" class ="btn btn-success" style="border: 1px solid #4d4d4d;"></th>
+			</tr>
+			
+	</table>
+</div>
