@@ -9,19 +9,19 @@ import { Post } from '../../services/post';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+
   posts: Post[];
 
   constructor(
-      private postService:PostService  
-  ) {}
+    private postService: PostService
+  ) { }
 
   ngOnInit() {
 
-       this.postService.getAllPost().subscribe(request=>{
-          this.posts = request;
+    this.postService.getAllPost().subscribe(request => {
+      this.posts = request;
 
-       })
+    })
   }
 
 }

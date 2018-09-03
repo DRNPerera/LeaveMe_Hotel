@@ -29,7 +29,7 @@ export class AuthService {
 
      let headers = new Headers();
      headers.append('Content-Type','application/json');
-     return this.http.post("http://localhost:3000/user/manageUsers",user,{headers:headers}).pipe(map(res=>res.json()));
+     return this.http.post("user/manageUsers",user,{headers:headers}).pipe(map(res=>res.json()));
 
   }
 
@@ -37,7 +37,7 @@ export class AuthService {
      
      let headers = new Headers();
      headers.append('Content-Type','application/json');
-     return  this.http.post("http://localhost:3000/user/login",user,{headers:headers}).pipe(map(res=>res.json()));
+     return  this.http.post("user/login",user,{headers:headers}).pipe(map(res=>res.json()));
 
   }
 
@@ -47,36 +47,36 @@ export class AuthService {
      this.fetchToken();
      let headers = new Headers({"Authorization": this.authtoken}) 
      let options = new RequestOptions({ headers: headers}); 
-     return this.http.get("http://localhost:3000/user/profile",options).pipe(map(res=>res.json()));
+     return this.http.get("user/profile",options).pipe(map(res=>res.json()));
 
   }
 
   getUser(){
 
-    return this.http.get('http://localhost:3000/user/manageUsers').pipe(map(res => res.json()));
+    return this.http.get('user/manageUsers').pipe(map(res => res.json()));
   }
 
 
   getUserToUpdate(id){
 
-    return this.http.get('http://localhost:3000/user/getUser/'+id).pipe(map(res => res.json()));
+    return this.http.get('user/getUser/'+id).pipe(map(res => res.json()));
   }
 
   updateUser(id,user){
 
-    return this.http.put('http://localhost:3000/user/updateUser/'+id,user).pipe(map(res => res.json()));
+    return this.http.put('user/updateUser/'+id,user).pipe(map(res => res.json()));
   }
 
 
   getAllUsers(){
 
-    return this.http.get('http://localhost:3000/user/manageAdmin').pipe(map(res => res.json()));
+    return this.http.get('user/manageAdmin').pipe(map(res => res.json()));
   }
 
 
   deleteUser(id){
 
-    return this.http.delete('http://localhost:3000/user/manageUsers/'+id)
+    return this.http.delete('user/manageUsers/'+id)
       .pipe(map(res => res.json()));
   }
 
